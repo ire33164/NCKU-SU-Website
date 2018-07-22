@@ -14,11 +14,13 @@ function login(username, passwd) {
       return account.verify(passwd, hashed)
       .then( val => {
           console.log("in /model/query/login.js: " + val);
-          return val;
+          if (val) return "0";
+          else return "1";
       });
   })
   .catch( err => {
-      return false;
+      // username not exist
+      return "2"
   });
 }
 

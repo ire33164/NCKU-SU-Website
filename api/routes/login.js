@@ -10,15 +10,15 @@ router.post('/user', urlencodedParser, (req, res) => {
     let username = req.body.username;
     let pwd = req.body.password;
     let status;
-    let val;
 
     loginOperation.login(username, pwd)
     .then( val =>{
-        console.log("val = " + val);
+        // 0 -> success
+        // 1 -> wrong password
+        // 2 -> wrong account
+        res.send(val);
     });
-    if (val == true) status = "1"
 
-    res.send(status);
 })
 
 /* GET developer by ID. */
