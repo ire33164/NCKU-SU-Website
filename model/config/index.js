@@ -2,7 +2,7 @@ var all = {
     sequelize: {
         database: 'mydb',
         username: 'root',
-        password:  null,
+        password:  'ire33164',
         define: {
             charset: 'utf8'
         },
