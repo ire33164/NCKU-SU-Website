@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const sequelize = new Sequelize('mydb', 'root', null, {
     dialect: 'mysql',
     host: 'localhost',
@@ -8,16 +8,25 @@ const sequelize = new Sequelize('mydb', 'root', null, {
 });
 
 
-const path = '/home/afcidk/db_learn/python_scripts/';
+const path = '/home/afcidk/NCKU-SU-Website/test_script/';
 
-ff('Account_data.txt', 'AccountData');
-ff('Article_data.txt', 'Articles');
-ff('Proposal_data.txt', 'Proposals');
-ff('Tag_data.txt', 'Tags');
+ff('accounts');
+ff('articleTags');
+ff('articles');
+ff('collections');
+ff('discusses');
+ff('polls');
+ff('proposalAgrees');
+ff('proposalClasses');
+ff('proposalTags');
+ff('proposals');
+ff('tags');
+ff('replies');
 
 
-function ff(s, t) {
-    sequelize.query("load data local infile '" + path + s + "' into table " + t).then(res => {
+function ff(s) {
+    sequelize.query("load data local infile '" + path + s + ".data" + "' into table " + s).then(res => {
+        console.log("processing..." + s);
         console.log(res);
     })
     .catch(err => {
