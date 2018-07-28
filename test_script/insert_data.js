@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mydb', 'root', null, {
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('mydb', 'root', 'ire33164', {
     dialect: 'mysql',
     host: 'localhost',
     define: {
@@ -8,7 +8,7 @@ const sequelize = new Sequelize('mydb', 'root', null, {
 });
 
 
-const path = '/home/afcidk/NCKU-SU-Website/test_script/';
+const path = '/home/chia/Desktop/QQ/NCKU-SU-Website/test_script/';
 
 ff('accounts');
 ff('articleTags');
