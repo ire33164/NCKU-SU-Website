@@ -12,3 +12,6 @@ dist
 
 # Backpack build
 build
+
+# test_data
+*.data
